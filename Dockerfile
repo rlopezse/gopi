@@ -4,7 +4,7 @@ FROM golang:1.23.2-alpine AS builder
 WORKDIR /app
 
 # Copiamos solo los archivos de módulos (cache)
-COPY go.mod go.sum ./
+COPY go.mod ./
 RUN go mod download
 
 # Copiamos el resto (main.go, etc.)
